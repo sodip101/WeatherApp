@@ -1,4 +1,4 @@
-This is a repository containing the solutions for the tasks given out by Gurzu Inc. to the candidates for the position Mobile Developer Trainee as part of the recruitment process.
+This is a repository containing the solutions for the tasks given out by Gurzu Inc. as part of their recruitment process.
 ---
 # 1. Pseudo Code
 **Q. There are 50 dice. 20 of them are facing 4. Remaining 30 are facing 3. You can’t see which dice is facing what number. Write pseudo code to separate these 50 dice into 2 groups, so that both groups have the same number of 4’s.**
