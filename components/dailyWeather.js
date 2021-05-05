@@ -5,6 +5,7 @@ import {
     Text,
     View,
     ActivityIndicator,
+    Image
 } from "react-native";
 
 export default function DailyWeather({ weather, isLoading }) {
@@ -36,9 +37,15 @@ export default function DailyWeather({ weather, isLoading }) {
                         >
                             <View>
                                 <Text style={styles.day}>{day.day}</Text>
-                                <Text style={styles.data}>
-                                    {day.description}
-                                </Text>
+                                <View style={{height:"50%"}}>
+                                    <Image
+                                        style={{height:"75%", width:"25%"}}
+                                        source={{ uri: day.icon }}
+                                    />
+                                    <Text style={styles.data}>
+                                        {day.description}
+                                    </Text>
+                                </View>
                             </View>
                             <View style={styles.temp}>
                                 <Text style={styles.data}>
@@ -63,18 +70,19 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
     week: {
-        flex: 4,
-        width: "90%",
+        flex: 5,
+        width: "93%",
     },
     daily: {
-        flex: 1,
+        flex:1,
         flexDirection: "row",
         justifyContent: "space-between",
         color: "white",
-        padding: 16,
+        padding: 20,
         margin: 5,
         backgroundColor: "#00B0FF",
         borderRadius: 7,
+        elevation:3
     },
     day: {
         color: "white",
@@ -84,6 +92,7 @@ const styles = StyleSheet.create({
     data: {
         color: "white",
         fontSize: 13,
+        marginBottom:16
     },
     temp: {
         marginTop: 16,

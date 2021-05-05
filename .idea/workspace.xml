@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f0a38d58-dfd8-4a58-9801-a60a0c2fbdab" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/current.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/initial.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/initial.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/splash.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/splash.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/currentWeather.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/currentWeather.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/dailyWeather.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/dailyWeather.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/helper.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1s74hwzf0cMgIiOlMZV1PsoR2Yc" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f0a38d58-dfd8-4a58-9801-a60a0c2fbdab" name="Default Changelist" comment="" />
+      <created>1620210416844</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620210416844</updated>
+    </task>
+    <servers />
+  </component>
+</project>

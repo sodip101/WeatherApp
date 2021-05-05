@@ -6,7 +6,7 @@ async function getCityInfo(searchTerm) {
     if (data.cod === 200) {
         return {
             coordinates: data.coord,
-            city: data.name+", "+data.sys.country,
+            city: data.name + ", " + data.sys.country,
         };
     } else {
         return data;
@@ -26,10 +26,11 @@ export default getData = async (searchTerm) => {
 
     const rawData = await response.json();
     const weather = {
-        city:cityInfo.city,
+        city: cityInfo.city,
         current: {
             description: rawData.current.weather[0].description,
             temp: rawData.current.temp,
+            icon: `http://openweathermap.org/img/wn/${rawData.current.weather[0].icon}@2x.png`,
         },
         daily: [],
     };
@@ -42,6 +43,7 @@ export default getData = async (searchTerm) => {
                 min: day.temp.min,
             },
             description: day.weather[0].description.toUpperCase(),
+            icon: `http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`,
         });
     });
 

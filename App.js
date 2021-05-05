@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
-import getData from "./helper";
 import {
     StyleSheet,
     KeyboardAvoidingView,
     View,
     Text,
-    Image,
+    Image
 } from "react-native";
 import CurrentWeather from "./components/currentWeather";
 import DailyWeather from "./components/dailyWeather";
 import Search from "./components/search";
+import getData from "./helper";
 
 export default function App() {
     const [location, setLocation] = useState(null);
@@ -71,9 +71,8 @@ export default function App() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
         backgroundColor: "white",
+        alignItems: "center",
     },
     isLoading: {
         flex: 1,
@@ -83,15 +82,15 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     messageView: {
-        flex: 8,
+        flex: 7,
         justifyContent: "center",
         alignItems: "center",
         paddingBottom: 70,
     },
     initialImg: {
-        flex: 1,
-        height: 50,
+        height: "35%",
         width: 350,
+        marginTop: 70,
     },
     initialMessage: {
         flex: 1,
