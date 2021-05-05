@@ -49,20 +49,20 @@ export default function DailyWeather({ weather, isLoading }) {
 
 const styles = StyleSheet.create({
     isLoading: {
-        flex: 1,
+        flex: 4,
         alignItems: "center",
         justifyContent: "center",
     },
     week: {
-        flex: 1,
-        width:"90%"
+        flex: 4,
+        width: "90%",
     },
     daily: {
-        flex:1,
+        flex: 1,
         flexDirection: "row",
         justifyContent: "space-between",
         color: "white",
-        padding:16,
+        padding: 16,
         margin: 5,
         backgroundColor: "#00B0FF",
         borderRadius: 7,

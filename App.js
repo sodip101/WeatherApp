@@ -1,22 +1,32 @@
 import React, { useState, useEffect } from "react";
 import getData from "./helper";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, KeyboardAvoidingView } from "react-native";
 import CurrentWeather from "./components/currentWeather";
 import DailyWeather from "./components/dailyWeather";
+import Search from "./components/search";
 
 export default function App() {
+    const [location, setLocation] = useState(null);
     const [weather, setWeather] = useState({});
     const [isLoading, setLoading] = useState(true);
 
     useEffect(() => {
-        getData()
+      if(location){
+        getData(location)
             .then((weatherData) => setWeather(weatherData))
             .catch((err) => console.log(err.message))
             .finally(() => setLoading(false));
-    }, []);
+      }
+    }, [location]);
 
     return (
-        <View style={styles.container}>
+        <KeyboardAvoidingView
+            style={styles.container}
+            enabled={Platform.OS === "ios"}
+            behavior={Platform.OS == "ios" ? "padding" : "height"}
+            keyboardVerticalOffset={Platform.OS == "ios" ? 0 : 20}
+        >
+            <Search setLocation={setLocation} />
             <CurrentWeather
                 style={styles.current}
                 weather={weather}
@@ -27,7 +37,7 @@ export default function App() {
                 weather={weather}
                 isLoading={isLoading}
             />
-        </View>
+        </KeyboardAvoidingView>
     );
 }
 
@@ -36,5 +46,6 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
+        backgroundColor: "white",
     },
 });

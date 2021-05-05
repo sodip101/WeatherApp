@@ -13,7 +13,9 @@ export default function CurrentWeather({ weather, isLoading }) {
     return (
         <View style={styles.current}>
             <View style={styles.currentDataView}>
-                <Text style={styles.currentTemp}>{weather.current.temp}&deg;C</Text>
+                <Text style={styles.currentTemp}>
+                    {weather.current.temp}&deg;C
+                </Text>
                 <Text style={styles.currentDescription}>
                     {weather.current.description.toUpperCase()}
                 </Text>
@@ -30,30 +32,29 @@ export default function CurrentWeather({ weather, isLoading }) {
 
 const styles = StyleSheet.create({
     isLoading: {
-        flex: 1,
+        flex: 4,
         alignItems: "center",
         justifyContent: "center",
     },
     current: {
-        flex: 1,
-        width:"100%"
+        flex: 4,
+        width: "100%",
     },
-    currentDataView:{
-        flex:1,
-        justifyContent:"center",
-        alignItems:"center"
+    currentDataView: {
+        flex: 1,
+        alignItems: "center",
     },
     currentTemp: {
-        fontSize: 52,
+        fontSize: 43,
     },
     currentDescription: {
         fontSize: 20,
     },
-    currentImgView:{
-        width:"100%",
-        flex:2,
-        alignItems:"center",
-        justifyContent:"center"
+    currentImgView: {
+        flex: 2,
+        marginBottom:10,
+        alignItems: "center",
+
     },
     currentImg: {
         height: "100%",
