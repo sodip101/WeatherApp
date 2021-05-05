@@ -18,7 +18,7 @@ In the above group of piped shell commands (UNIX), the 1st command `cat` outputs
 
 # 3. Weather App
 
-A React Native Weather App for viewing weather forecast for the whole week for any city. The app fetches the data from the [Open Weather API](https://openweathermap.org/api).
+A React Native Weather App for viewing weather forecast for the whole week for any city. The app fetches the data from the [Open Weather API](https://openweathermap.org/api). [Download APK file](https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40sodip/WeatherApp-ba3c313bc11e4254871f2dbd54d5b7cb-signed.apk).
 
 ## 3.1. App Demo
 <img src="app_demo.gif" width=250 height=550>
