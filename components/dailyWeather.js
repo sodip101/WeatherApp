@@ -8,6 +8,15 @@ import {
 } from "react-native";
 
 export default function DailyWeather({ weather, isLoading }) {
+    if (weather.message) {
+        return (
+            <View style={styles.isLoading}>
+                <ActivityIndicator size="large" color="#00B0FF" />
+                <Text>{weather.message.toUpperCase()}</Text>
+            </View>
+        );
+    }
+
     if (isLoading) {
         return (
             <View style={styles.isLoading}>

@@ -2,6 +2,16 @@ import React from "react";
 import { StyleSheet, Text, View, Image, ActivityIndicator } from "react-native";
 
 export default function CurrentWeather({ weather, isLoading }) {
+
+    if (weather.message) {
+        return (
+            <View style={styles.isLoading}>
+                <ActivityIndicator size="large" color="#00B0FF" />
+                <Text>{weather.message.toUpperCase()}</Text>
+            </View>
+        );
+    }
+
     if (isLoading) {
         return (
             <View style={styles.isLoading}>
@@ -13,6 +23,9 @@ export default function CurrentWeather({ weather, isLoading }) {
     return (
         <View style={styles.current}>
             <View style={styles.currentDataView}>
+                <Text style={styles.currentDescription}>
+                    {weather.city.toUpperCase()}
+                </Text>
                 <Text style={styles.currentTemp}>
                     {weather.current.temp}&deg;C
                 </Text>
@@ -41,7 +54,7 @@ const styles = StyleSheet.create({
         width: "100%",
     },
     currentDataView: {
-        flex: 1,
+        flex: 1.5,
         alignItems: "center",
     },
     currentTemp: {
@@ -51,7 +64,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
     currentImgView: {
-        flex: 2,
+        flex: 2.5,
         marginBottom:10,
         alignItems: "center",
 

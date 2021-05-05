@@ -1,20 +1,32 @@
-async function getCoordinates(searchTerm){
+async function getCityInfo(searchTerm) {
     const coordinatesLink = `http://api.openweathermap.org/data/2.5/weather?q=${searchTerm}&appid=ffbccf87d3fcf7af14d15c61e6f7d6cb`;
-    const response=await fetch(coordinatesLink);
-    const data=await response.json();
+    const response = await fetch(coordinatesLink);
+    const data = await response.json();
 
-    return data.coord;
+    if (data.cod === 200) {
+        return {
+            coordinates: data.coord,
+            city: data.name+", "+data.sys.country,
+        };
+    } else {
+        return data;
+    }
 }
 
-export default getData = async (searchTerm) => { 
-    const coordinates=await getCoordinates(searchTerm);
+export default getData = async (searchTerm) => {
+    const cityInfo = await getCityInfo(searchTerm);
 
-    const weatherLink = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&exclude=minutely,hourly,alerts&appid=ffbccf87d3fcf7af14d15c61e6f7d6cb`;
+    if (cityInfo.message) {
+        return cityInfo;
+    }
+
+    const weatherLink = `https://api.openweathermap.org/data/2.5/onecall?lat=${cityInfo.coordinates.lat}&lon=${cityInfo.coordinates.lon}&units=metric&exclude=minutely,hourly,alerts&appid=ffbccf87d3fcf7af14d15c61e6f7d6cb`;
     const days = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
     const response = await fetch(weatherLink);
 
     const rawData = await response.json();
     const weather = {
+        city:cityInfo.city,
         current: {
             description: rawData.current.weather[0].description,
             temp: rawData.current.temp,
